@@ -1,0 +1,51 @@
+<!DOCTYPE Html>
+<Html Lang="id"
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2 :CSS Grid </title>
+<style>
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 3fr 3fr ;
+    grid-template-rows: auto auto auto;
+    gap: 9px; 
+    padding: 5px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.grid-container {
+    grid-template-areas:
+    "header nav"
+    "artikel nav"
+    "footer footer";
+}
+
+.header {grid-area:header; background-color:#BDC3C7;}
+.artikel {grid-area:artikel; background-color:#F8BBD0;}
+.nav {grid-area:nav; background-color:#006400;}
+.footer {grid-area:footer; background-color:grey;}
+
+.grid-container > div {
+    padding: 30px;
+    border-radius: 2px;
+}
+</style>
+
+
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="header">Header</div>
+        <div class="artikel">artikel</div>
+        <div class="nav">Navigasi</div>
+        <div class="footer">Footer</div>
+        
+      
+    </div>
+
+</body>
+</html>
