@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Daftar Akun - JIG Cinema</title>
+</head>
+<body style="background-color: #121824; color: white;">
+
+    <div style="background-color: #1c2331; width: 450px; margin: 30px auto; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+
+        <table border="0" width="400">
+        <tr>
+            <td colspan="1">
+                <h1><span style="color: red;">JIG</span> Cinema</h1>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td colspan="1">
+                <h2>Daftar Akun</h2>
+                <p>Tanda <font color="red">*</font> wajib diisi.</p>
+            </td>
+        </tr>
+
+    <form>
+
+            <tr>
+                <td colspan="1">
+                    <label><b>Nama Pengguna </b><font color="red">*</font></label><br>
+                    <small>Hanya huruf, angka, titik, dan garis bawah (5-45 karakter).</small><br>
+                    <input type="text" placeholder="contoh: anandaputra" required><br>
+                    <small>. Minimal 5 karakter</small><br>
+                    <small>. Hanya alfanumerik, titik (.) atau garis bawah (_)</small>
+                    <br><br>
+                </td>
+            </tr>
+
+			<tr>
+                <td colspan="1">
+                    <label><b>Email</b> <font color="red">*</font></label><br>
+                    <input type="email" placeholder="nama@contoh.com" required>
+                    <br><br>
+                </td>
+            </tr>
+
+			<tr>
+                <td colspan="1">
+                    <label><b>No. Telepon</b> <button type="button" disabled>opsional</button></label><br>
+                    <input type="text" placeholder="08xxxxxxxxxx">
+                    <br><br>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td colspan="1">
+                    <label><b>Jenis Kelamin</b> <font color="red">*</font></label><br>
+                    <select required>
+                        <option ="">-- Pilih --</option>
+                        <option>Laki-laki</option>
+                        <option>Perempuan</option>
+                    </select>
+                    <br><br>
+                </td>
+            </tr>
+
+			<tr>
+                <td colspan="1">
+                    <label><b>Kata Sandi</b> <font color="red">*</font></label><br>
+                    <input type="password" placeholder="......" required><br>
+                    <small>Minimal 8 karakter</small>
+                    <br><br>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td colspan="1">
+                    <button type="submit">Daftar</button>
+                </td>
+            </tr>
+		</table>
+	</form>
+    </div>
+</body>
+</html>
