@@ -3,85 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <title>Daftar Akun - JIG Cinema</title>
+    <script src="https://jsdelivr.net"></script>
 </head>
-<body style="background-color: #121824; color: white;">
+<body style="background-color: #121824; color: white; font-family: Arial, sans-serif;">
 
     <div style="background-color: #1c2331; width: 450px; margin: 30px auto; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
 
-        <table border="0" width="400">
-        <tr>
-            <td colspan="1">
-                <h1><span style="color: red;">JIG</span> Cinema</h1>
-            </td>
-        </tr>
+        <form id="registerForm">
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <h1><span style="color: red;">JIG</span> Cinema</h1>
+                    </td>
+                </tr>
 
+                <tr>
+                    <td>
+                        <h2>Daftar Akun</h2>
+                        <p>Tanda <font color="red">*</font> wajib diisi.</p>
+                    </td>
+                </tr>
 
-        <tr>
-            <td colspan="1">
-                <h2>Daftar Akun</h2>
-                <p>Tanda <font color="red">*</font> wajib diisi.</p>
-            </td>
-        </tr>
+                <tr>
+                    <td>
+                        <label><b>Nama Pengguna </b><font color="red">*</font></label><br>
+                        <input type="text" id="username" placeholder="contoh: anandaputra" minlength="5" maxlength="45" pattern="^[a-zA-Z0-9._]+$" required style="width: 90%; padding: 6px; margin-top: 5px;"><br>
+                        <small style="color: #bbb; display: inline-block; margin-top: 5px;">
+                            • Minimal 5 karakter, maksimal 45 karakter.<br>
+                            • Hanya alfanumerik, titik (.) atau garis bawah (_).
+                        </small>
+                        <br><br>
+                    </td>
+                </tr>
 
-    <form>
+                <tr>
+                    <td>
+                        <label><b>Email</b> <font color="red">*</font></label><br>
+                        <input type="email" id="email" placeholder="nama@contoh.com" required style="width: 90%; padding: 6px; margin-top: 5px;">
+                        <br><br>
+                    </td>
+                </tr>
 
-            <tr>
-                <td colspan="1">
-                    <label><b>Nama Pengguna </b><font color="red">*</font></label><br>
-                    <small>Hanya huruf, angka, titik, dan garis bawah (5-45 karakter).</small><br>
-                    <input type="text" placeholder="contoh: anandaputra" required><br>
-                    <small>. Minimal 5 karakter</small><br>
-                    <small>. Hanya alfanumerik, titik (.) atau garis bawah (_)</small>
-                    <br><br>
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        <label><b>No. Telepon</b> <button type="button" disabled style="font-size: 11px; padding: 1px 4px;">opsional</button></label><br>
+                        <input type="text" id="phone" placeholder="08xxxxxxxxxx" style="width: 90%; padding: 6px; margin-top: 5px;">
+                        <br><br>
+                    </td>
+                </tr>
 
-			<tr>
-                <td colspan="1">
-                    <label><b>Email</b> <font color="red">*</font></label><br>
-                    <input type="email" placeholder="nama@contoh.com" required>
-                    <br><br>
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        <label><b>Jenis Kelamin</b> <font color="red">*</font></label><br>
+                        <select id="gender" required style="width: 94%; padding: 6px; margin-top: 5px;">
+                            <option value="">-- Pilih --</option>
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                        <br><br>
+                    </td>
+                </tr>
 
-			<tr>
-                <td colspan="1">
-                    <label><b>No. Telepon</b> <button type="button" disabled>opsional</button></label><br>
-                    <input type="text" placeholder="08xxxxxxxxxx">
-                    <br><br>
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        <label><b>Kata Sandi</b> <font color="red">*</font></label><br>
+                        <input type="password" id="password" placeholder="......" minlength="8" required style="width: 90%; padding: 6px; margin-top: 5px;"><br>
+                        <small style="color: #bbb;">• Minimal 8 karakter</small>
+                        <br><br>
+                    </td>
+                </tr>
 
-
-            <tr>
-                <td colspan="1">
-                    <label><b>Jenis Kelamin</b> <font color="red">*</font></label><br>
-                    <select required>
-                        <option ="">-- Pilih --</option>
-                        <option>Laki-laki</option>
-                        <option>Perempuan</option>
-                    </select>
-                    <br><br>
-                </td>
-            </tr>
-
-			<tr>
-                <td colspan="1">
-                    <label><b>Kata Sandi</b> <font color="red">*</font></label><br>
-                    <input type="password" placeholder="......" required><br>
-                    <small>Minimal 8 karakter</small>
-                    <br><br>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td colspan="1">
-                    <button type="submit">Daftar</button>
-                </td>
-            </tr>
-		</table>
-	</form>
+                <tr>
+                    <td>
+                        <button type="submit" style="padding: 8px 20px; background-color: red; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">Daftar</button>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <div id="responseMessage" style="margin-top: 15px; font-weight: bold;"></div>
+                    </td>
+                </tr>
+            </table>
+        </form>
     </div>
+
+    <script>
+        const SUPABASE_URL = "ISI_URL_SUPABASE_ANDA_DI_SINI";
+        const SUPABASE_ANON_KEY = "ISI_ANON_KEY_SUPABASE_ANDA_DI_SINI";
+
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const gender = document.getElementById('gender').value;
+            const password = document.getElementById('password').value;
+            const msgDiv = document.getElementById('responseMessage');
+            
+            msgDiv.style.color = "yellow";
+            msgDiv.innerText = "Sedang memproses pendaftaran...";
+
+            const { data, error } = await supabaseClient
+                .from('users')
+                .insert([{ username, email, phone, gender, password }]);
+
+            if (error) {
+                msgDiv.style.color = "red";
+                msgDiv.innerText = "Gagal mendaftar: " + error.message;
+            } else {
+                msgDiv.style.color = "lightgreen";
+                msgDiv.innerText = "Pendaftaran Berhasil! Data tersimpan di Database.";
+                document.getElementById('registerForm').reset();
+            }
+        });
+    </script>
 </body>
 </html>
